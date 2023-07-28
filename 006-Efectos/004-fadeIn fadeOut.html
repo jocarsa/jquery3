@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <style>
+            #texto{
+                width:200px;
+                height:200px;
+                color:white;
+                background:red;
+            }
+        </style>
+        <script>
+            $(document).ready(function(){
+                $("#esconde").click(function(){
+                    $("#texto").fadeOut(1000)
+                })
+                $("#muestra").click(function(){
+                    $("#texto").fadeIn(1000)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="esconde">Esconde</button>
+        <button id="muestra">Muestra</button>
+        <div id="texto">
+            Hola que tal
+        </div>
+    </body>
+</html>

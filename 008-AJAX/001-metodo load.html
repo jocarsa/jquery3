@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#carga").click(function(){
+                    $("#objetivo").load('datos.txt')
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="carga">Carga contenido del servidor</button>
+        <div id="objetivo"></div>
+    </body>
+</html>

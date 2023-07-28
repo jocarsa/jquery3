@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <style>
+            #mitexto{}
+            .verde{color:green;}
+        </style>
+        <script>
+            $(document).ready(function(){
+                $("#poner").click(function(){
+                    $("#mitexto").addClass("verde")
+                });
+                $("#quitar").click(function(){
+                    $("#mitexto").removeClass("verde")
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="poner">Poner</button>
+        <button id="quitar">Quitar</button>
+        <div id="mitexto">
+            Este es un texto que escribo en HTML
+        </div>
+    </body>
+</html>

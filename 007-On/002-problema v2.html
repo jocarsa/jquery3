@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#crea").click(function(){
+                    $("body").append('<button id="pulsame">Hola</button>')
+                    $("#pulsame").click(function(){
+                        console.log("hola desde el nuevo boton")
+                    })
+                })
+                
+            })
+        </script>
+    </head>
+    <body>
+        <button id="crea">Crea nuevo elemento</button>
+    </body>
+</html>

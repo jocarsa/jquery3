@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    console.log($("#mitexto").text())
+                })
+                
+            })
+        </script>
+    </head>
+    <body>
+        <button>Mi botón</button>
+        <div id="mitexto">
+            Este es un texto que escribo en HTML
+        </div>
+    </body>
+</html>

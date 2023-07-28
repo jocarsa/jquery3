@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <style>
+            #mitexto{}
+            .verde{color:green;}
+        </style>
+        <script>
+            $(document).ready(function(){
+                $("#poner").click(function(){
+                    $("#mitexto").append("este es un elemento nuevo<br>")
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="poner">Poner</button>
+        <div id="mitexto">
+            Este es un texto que escribo en HTML
+        </div>
+    </body>
+</html>

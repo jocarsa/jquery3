@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <style>
+            canvas{
+                border:1px solid grey;
+            }
+        </style>
+        <script src="../jquery-3.7.0.js"></script>
+        <script>
+            var pulsado = false
+            var color = "black"
+            $(document).ready(function(){
+                $("#color").change(function(){color = $(this).val()})
+                $(document).mousedown(function(){pulsado = true});
+                $(document).mouseup(function(){pulsado = false});
+                contexto = document.getElementById("lienzo").getContext("2d")
+                $(document).mousemove(function(e){
+                    if(pulsado == true){
+                        contexto.fillStyle = color
+                        contexto.fillRect(e.pageX,e.pageY,3,3)
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="lienzo" width=512 height=512></canvas>
+        <input type="color" id="color">
+    </body>
+</html>

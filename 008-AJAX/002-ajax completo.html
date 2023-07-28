@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#carga").click(function(){
+                    $.ajax({
+                        async: true,
+                        type: "POST",
+                        dataType: "html",
+                        contentType: "application/x-www-form-urlencoded",
+                        url: "calculadora.php",
+                        data: "dato=3",
+                        beforeSend: inicioEnvio,
+                        success: llegadaDatos,
+                        timeout: 4000,
+                        error: problemas
+                      });
+                })
+            })
+            function inicioEnvio(){
+                console.log("Vamos a ver si todo está ok")
+            }
+            function llegadaDatos(data){
+                console.log(data)
+            }
+            function problemas(data){
+                console.log(data)
+            }
+        </script>
+    </head>
+    <body>
+        <button id="carga">Carga contenido del servidor</button>
+        <div id="objetivo"></div>
+    </body>
+</html>

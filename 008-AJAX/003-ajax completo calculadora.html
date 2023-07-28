@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#calcula").click(function(){
+                    $.ajax({
+                        async: true,
+                        type: "POST",
+                        dataType: "html",
+                        contentType: "application/x-www-form-urlencoded",
+                        url: "calculadora.php",
+                        data: "dato="+$("input").val(),
+                        beforeSend: inicioEnvio,
+                        success: llegadaDatos,
+                        timeout: 4000,
+                        error: problemas
+                      });
+                    console.log("ajax ok")
+                })
+            })
+            function inicioEnvio(){
+                console.log("Vamos a ver si todo está ok")
+            }
+            function llegadaDatos(data){
+                console.log("ha ido ok")
+                $("#objetivo").text("el doble es: "+data)
+            }
+            function problemas(data){
+                console.log(data)
+            }
+        </script>
+    </head>
+    <body>
+        <input type="number">
+        <button id="calcula">Calcula el doble</button>
+        <div id="objetivo"></div>
+    </body>
+</html>

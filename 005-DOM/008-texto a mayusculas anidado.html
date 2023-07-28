@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <style>
+            #mitexto{color:green;}
+        </style>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("#mitexto").text($("#mitexto").text().toUpperCase())
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button>Mi botón</button>
+        <div id="mitexto">
+            Este es un texto que escribo en HTML
+        </div>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("button").clicktoggle(
+                function(){
+                    $("#texto").css("color","red")
+                },function(){
+                    $("#texto").css("color","green")
+                })
+                
+            })
+        </script>
+    </head>
+    <body>
+        <button>Pulsame</button>
+        <div id="texto">
+            Hola que tal
+        </div>
+    </body>
+</html>

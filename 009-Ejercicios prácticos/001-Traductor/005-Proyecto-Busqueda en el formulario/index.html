@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="jquery-3.7.0.js"></script>
+        <script>
+            var json 
+            $(document).ready(function(){
+                $.ajax({
+                    url: "csvAjson.php",
+                    success: function(data){
+                        json = JSON.parse(data)
+                        console.log(json)
+                    }
+                });
+                $("#termino").keyup(function(){
+                    console.log("voy a buscar en el json")
+                    for(var i = 0;i<json.length;i++){
+                        if(json[i]['es'] == $(this).val()){
+                            console.log("coincidencia")
+                            console.log(json[i])
+                        }
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <input type="text" id="termino">
+        <div id="resultados"></div>
+    </body>
+</html>

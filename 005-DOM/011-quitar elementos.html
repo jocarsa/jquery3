@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="../jquery-3.7.0.js"></script>
+        <style>
+            #mitexto{}
+            .verde{color:green;}
+        </style>
+        <script>
+            $(document).ready(function(){
+                $("#quitar").click(function(){
+                    $("#mitexto").remove()
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="quitar">Quitar</button>
+        <div id="mitexto">
+            Este es un texto que escribo en HTML
+        </div>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Javascript</title>
+        <meta charset="utf-8">
+        <script src="jquery-3.7.0.js"></script>
+        <script>
+            var json;
+            var idioma = "es";
+            $(document).ready(function(){
+                $.ajax({
+                    url: "csvAjson.php",
+                    success: function(data){
+                        json = JSON.parse(data)
+                        console.log(json)
+                    }
+                });
+                $("#termino").keyup(function(){
+                    console.log("voy a buscar en el json")
+                    $("#resultados").html("")
+                    for(var i = 0;i<json.length;i++){
+                        if(json[i][idioma].toLowerCase().includes($(this).val().toLowerCase())){
+                            console.log("coincidencia")
+                            console.log(json[i])
+                            $("#resultados").append(
+                                'es:'+json[i]['es']+'<br>'+
+                                'en:'+json[i]['en']+'<br>'+
+                                'de:'+json[i]['de']+'<br>'+
+                                'fr:'+json[i]['fr']+'<br>'+
+                                'it:'+json[i]['it']+'<br>'
+                            )
+                        }
+                    }
+                })
+                $("input[type=radio]").change(function(){
+                    idioma = $(this).attr("idioma")
+                    console.log("El nuevo idioma seleccionado es: "+idioma)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <input type="radio" name="idioma" idioma="es" checked><img src="img/es.png"><br>
+        <input type="radio" name="idioma" idioma="en"><img src="img/en.png"><br>
+        <input type="radio" name="idioma" idioma="de"><img src="img/de.png"><br>
+        <input type="radio" name="idioma" idioma="fr"><img src="img/fr.png"><br>
+        <input type="radio" name="idioma" idioma="it"><img src="img/it.png"><br>
+        <input type="text" id="termino">
+        <div id="resultados"></div>
+    </body>
+</html>
